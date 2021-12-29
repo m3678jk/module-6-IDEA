@@ -5,22 +5,21 @@ public class NameCounter {
 
     public int count(String text) {
         int count = 0;
+
         String[] words = text.split(" ");
-        System.out.println(Arrays.toString(words));
-        for (String word : words) {
-                String[] letters = word.split("");
-                int countUpperLetter = 0;
-            System.out.println(Arrays.toString(letters));
+        System.out.println( "lenth" + words.length);
+        int countUpperLetter = 0;
 
-                for (String letter : letters) {
-                    if (!letter.equals(letter.toLowerCase(Locale.ROOT))) {
-                        countUpperLetter += 1;
+            for (String word : words) {
+                if (!word.equals(word.toLowerCase(Locale.ROOT))) {
+                    countUpperLetter += 1;
 
-                        count += 1;
-                        System.out.println(word + " " + countUpperLetter);
-                        return countUpperLetter;
-                    }
                 }
+            }
+
+                if (countUpperLetter!=words.length){
+                     count = countUpperLetter;
+
         }
         return count;
     }
